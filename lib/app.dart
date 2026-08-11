@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'core/router/app_router.dart';
 
 class HyperlocalCustomerApp extends StatelessWidget {
   const HyperlocalCustomerApp({super.key});
@@ -14,20 +14,7 @@ class HyperlocalCustomerApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: const TextTheme(bodyMedium: TextStyle(fontSize: 16)),
       ),
-      routerConfig: _router,
+      routerConfig: appRouter,
     );
   }
 }
-
-final _router = GoRouter(
-  initialLocation: '/',
-  routes: [
-    GoRoute(
-      path: '/',
-      builder:
-          (context, state) => const Scaffold(
-            body: Center(child: Text('Customer App — Sprint 2 scaffold')),
-          ),
-    ),
-  ],
-);
